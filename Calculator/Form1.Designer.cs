@@ -67,9 +67,10 @@ namespace Calculator
             this.one.Name = "one";
             this.one.Size = new System.Drawing.Size(85, 60);
             this.one.TabIndex = 0;
+            this.one.TabStop = false;
             this.one.Text = "1";
             this.one.UseVisualStyleBackColor = false;
-            this.one.Click += new System.EventHandler(this.one_Click);
+            this.one.MouseClick += new System.Windows.Forms.MouseEventHandler(this.One_MouseClick);
             // 
             // two
             // 
@@ -82,7 +83,7 @@ namespace Calculator
             this.two.TabIndex = 2;
             this.two.Text = "2";
             this.two.UseVisualStyleBackColor = false;
-            this.two.Click += new System.EventHandler(this.two_Click);
+            this.two.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Two_MouseClick);
             // 
             // three
             // 
@@ -93,9 +94,10 @@ namespace Calculator
             this.three.Name = "three";
             this.three.Size = new System.Drawing.Size(85, 60);
             this.three.TabIndex = 3;
+            this.three.TabStop = false;
             this.three.Text = "3";
             this.three.UseVisualStyleBackColor = false;
-            this.three.Click += new System.EventHandler(this.three_Click);
+            this.three.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Three_MouseClick);
             // 
             // four
             // 
@@ -108,7 +110,7 @@ namespace Calculator
             this.four.TabIndex = 4;
             this.four.Text = "4";
             this.four.UseVisualStyleBackColor = false;
-            this.four.Click += new System.EventHandler(this.four_Click);
+            this.four.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Four_MouseClick);
             // 
             // five
             // 
@@ -121,7 +123,7 @@ namespace Calculator
             this.five.TabIndex = 5;
             this.five.Text = "5";
             this.five.UseVisualStyleBackColor = false;
-            this.five.Click += new System.EventHandler(this.five_Click);
+            this.five.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Five_MouseClick);
             // 
             // six
             // 
@@ -134,7 +136,7 @@ namespace Calculator
             this.six.TabIndex = 6;
             this.six.Text = "6";
             this.six.UseVisualStyleBackColor = false;
-            this.six.Click += new System.EventHandler(this.six_Click);
+            this.six.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Six_MouseClick);
             // 
             // seven
             // 
@@ -147,7 +149,7 @@ namespace Calculator
             this.seven.TabIndex = 7;
             this.seven.Text = "7";
             this.seven.UseVisualStyleBackColor = false;
-            this.seven.Click += new System.EventHandler(this.seven_Click);
+            this.seven.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Seven_MouseClick);
             // 
             // eight
             // 
@@ -160,7 +162,7 @@ namespace Calculator
             this.eight.TabIndex = 8;
             this.eight.Text = "8";
             this.eight.UseVisualStyleBackColor = false;
-            this.eight.Click += new System.EventHandler(this.eight_Click);
+            this.eight.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Eight_MouseClick);
             // 
             // nine
             // 
@@ -173,7 +175,7 @@ namespace Calculator
             this.nine.TabIndex = 9;
             this.nine.Text = "9";
             this.nine.UseVisualStyleBackColor = false;
-            this.nine.Click += new System.EventHandler(this.nine_Click);
+            this.nine.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Nine_MouseClick);
             // 
             // zero
             // 
@@ -186,7 +188,7 @@ namespace Calculator
             this.zero.TabIndex = 10;
             this.zero.Text = "0";
             this.zero.UseVisualStyleBackColor = false;
-            this.zero.Click += new System.EventHandler(this.zero_Click);
+            this.zero.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Zero_MouseClick);
             // 
             // dot
             // 
@@ -199,7 +201,7 @@ namespace Calculator
             this.dot.TabIndex = 11;
             this.dot.Text = ".";
             this.dot.UseVisualStyleBackColor = false;
-            this.dot.Click += new System.EventHandler(this.dot_Click);
+            this.dot.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Dot_MouseClick);
             // 
             // clear
             // 
@@ -212,7 +214,7 @@ namespace Calculator
             this.clear.TabIndex = 12;
             this.clear.Text = "C";
             this.clear.UseVisualStyleBackColor = false;
-            this.clear.Click += new System.EventHandler(this.clear_Click);
+            this.clear.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Clear_MouseClick);
             // 
             // addition
             // 
@@ -225,7 +227,7 @@ namespace Calculator
             this.addition.TabIndex = 13;
             this.addition.Text = "+";
             this.addition.UseVisualStyleBackColor = false;
-            this.addition.Click += new System.EventHandler(this.addition_Click);
+            this.addition.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Addition_MouseClick);
             // 
             // subtraction
             // 
@@ -238,7 +240,7 @@ namespace Calculator
             this.subtraction.TabIndex = 14;
             this.subtraction.Text = "-";
             this.subtraction.UseVisualStyleBackColor = false;
-            this.subtraction.Click += new System.EventHandler(this.subtraction_Click);
+            this.subtraction.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Subtraction_MouseClick);
             // 
             // multiplication
             // 
@@ -251,7 +253,7 @@ namespace Calculator
             this.multiplication.TabIndex = 15;
             this.multiplication.Text = "x";
             this.multiplication.UseVisualStyleBackColor = false;
-            this.multiplication.Click += new System.EventHandler(this.multiplication_Click);
+            this.multiplication.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Multiplication_MouseClick);
             // 
             // division
             // 
@@ -264,7 +266,7 @@ namespace Calculator
             this.division.TabIndex = 16;
             this.division.Text = "/";
             this.division.UseVisualStyleBackColor = false;
-            this.division.Click += new System.EventHandler(this.division_Click);
+            this.division.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Division_MouseClick);
             // 
             // equal
             // 
@@ -277,7 +279,7 @@ namespace Calculator
             this.equal.TabIndex = 17;
             this.equal.Text = "=";
             this.equal.UseVisualStyleBackColor = false;
-            this.equal.Click += new System.EventHandler(this.equal_Click);
+            this.equal.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Equal_MouseClick);
             // 
             // Form1
             // 
@@ -303,8 +305,10 @@ namespace Calculator
             this.Controls.Add(this.two);
             this.Controls.Add(this.one);
             this.Controls.Add(this.textBox1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Calculator";
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
