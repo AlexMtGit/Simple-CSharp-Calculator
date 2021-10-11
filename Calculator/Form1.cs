@@ -14,6 +14,7 @@ namespace Calculator
     {
 
         string input = string.Empty;            //This string stores the user input
+        string lastResult = string.Empty;       //This string stores the last operation result
         string firstOperand = string.Empty;     //This string stores the first operand
         string secondOperand = string.Empty;    //This string stores the second operand
         char operation;                         //This char stores the operation type
@@ -30,6 +31,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "1";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void two_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "2";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void three_Click(object sender, EventArgs e)
@@ -44,6 +47,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "3";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void four_Click(object sender, EventArgs e)
@@ -51,6 +55,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "4";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void five_Click(object sender, EventArgs e)
@@ -58,6 +63,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "5";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void six_Click(object sender, EventArgs e)
@@ -65,6 +71,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "6";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void seven_Click(object sender, EventArgs e)
@@ -72,6 +79,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "7";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void eight_Click(object sender, EventArgs e)
@@ -79,6 +87,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "8";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void nine_Click(object sender, EventArgs e)
@@ -86,6 +95,7 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "9";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void zero_Click(object sender, EventArgs e)
@@ -93,14 +103,15 @@ namespace Calculator
             this.textBox1.Text = "";
             input += "0";
             this.textBox1.Text += input;
+            this.lastResult = string.Empty;
         }
 
         private void dot_Click(object sender, EventArgs e)
         {
-            if (!input.Contains('.'))
+            if (!input.Contains(','))
             {
                 this.textBox1.Text = "";
-                input += ".";
+                input += ",";
                 this.textBox1.Text += input;
             }
 
@@ -112,13 +123,24 @@ namespace Calculator
             this.input = string.Empty;
             this.firstOperand = string.Empty;
             this.secondOperand = string.Empty;
+            this.lastResult = string.Empty;
         }
 
         private void addition_Click(object sender, EventArgs e)
         {
-            firstOperand = input;
-            operation = '+';
-            input = string.Empty;
+            if (lastResult == string.Empty)
+            {
+                firstOperand = input;
+                operation = '+';
+                input = string.Empty;
+            }
+            else
+            {
+                firstOperand = lastResult;
+                operation = '+';
+                input = string.Empty;
+            }
+
         }
 
         private void subtraction_Click(object sender, EventArgs e)
@@ -131,25 +153,55 @@ namespace Calculator
             }
             else
             {
-                this.textBox1.Text = "";
-                input += "-";
-                this.textBox1.Text += input;
+                if (lastResult != string.Empty)
+                {
+                    firstOperand = lastResult;
+                    operation = '-';
+                    input = string.Empty;
+                }
+                else
+                {
+                    this.textBox1.Text = "";
+                    input += "-";
+                    this.textBox1.Text += input;
+                }
+
             }
 
         }
 
         private void multiplication_Click(object sender, EventArgs e)
         {
-            firstOperand = input;
-            operation = '*';
-            input = string.Empty;
+            if (lastResult == string.Empty)
+            {
+                firstOperand = input;
+                operation = '*';
+                input = string.Empty;
+            }
+            else
+            {
+                firstOperand = lastResult;
+                operation = '*';
+                input = string.Empty;
+            }
+
         }
 
         private void division_Click(object sender, EventArgs e)
         {
-            firstOperand = input;
-            operation = '/';
-            input = string.Empty;
+            if (lastResult == string.Empty)
+            {
+                firstOperand = input;
+                operation = '/';
+                input = string.Empty;
+            }
+            else
+            {
+                firstOperand = lastResult;
+                operation = '/';
+                input = string.Empty;
+            }
+
         }
 
         private void equal_Click(object sender, EventArgs e)
@@ -190,6 +242,7 @@ namespace Calculator
                     }
                 }
                 input = "";
+                lastResult = result.ToString();
             }
            
         }
